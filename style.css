@@ -23,6 +23,7 @@ body {
   padding: 40px 30px;
   text-align: center;
   width: 350px;
+  max-width: 90%; /* 🔹 Se adapta a pantallas pequeñas */
   backdrop-filter: blur(12px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.6);
   animation: fadeIn 1s ease-in-out;
@@ -30,10 +31,10 @@ body {
 
 .logo {
   width: 230px;
-  height: 150px;
+  height: auto; /* 🔹 Mantiene proporción */
+  max-width: 80%; /* 🔹 Reduce en pantallas pequeñas */
   margin: 0 auto 20px;
   display: block;
-  
 }
 
 h1 {
@@ -77,13 +78,14 @@ p {
 }
 
 .modal {
+  display: none;
   position: fixed;
-  top: 0;
+  z-index: 1000;
   left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.6);
-  display: none;
   justify-content: center;
   align-items: center;
 }
@@ -91,27 +93,53 @@ p {
 .modal-content {
   background: var(--color-gris-oscuro);
   color: var(--color-blanco);
-  padding: 30px 20px;
-  border-radius: 12px;
+  padding: 20px;
+  border-radius: 10px;
   text-align: center;
-  width: 250px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+  width: 300px;
+  max-width: 80%;
+  animation: fadeIn 0.5s ease;
 }
 
-.modal-content button {
+#closeModal {
   margin-top: 15px;
-  padding: 10px 20px;
-  border: none;
+  padding: 8px 16px;
   background: var(--color-azul);
+  border: none;
+  border-radius: 6px;
   color: var(--color-blanco);
-  border-radius: 8px;
   cursor: pointer;
   transition: 0.3s;
 }
 
-.modal-content button:hover {
-  background: var(--color-blanco);
-  color: var(--color-azul);
+#closeModal:hover {
+  background: var(--color-blanco-suave);
+  color: var(--color-negro);
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 25px 20px;
+    width: 70%;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  .link {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .logo {
+    max-width: 70%;
+    margin-bottom: 15px;
+  }
 }
 
 @keyframes fadeIn {
