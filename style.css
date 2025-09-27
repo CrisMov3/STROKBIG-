@@ -23,7 +23,7 @@ body {
   padding: 40px 30px;
   text-align: center;
   width: 350px;
-  max-width: 90%; /* 🔹 Se adapta a pantallas pequeñas */
+  max-width: 90%;
   backdrop-filter: blur(12px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.6);
   animation: fadeIn 1s ease-in-out;
@@ -31,8 +31,8 @@ body {
 
 .logo {
   width: 230px;
-  height: auto; /* 🔹 Mantiene proporción */
-  max-width: 80%; /* 🔹 Reduce en pantallas pequeñas */
+  height: auto;
+  max-width: 80%;
   margin: 0 auto 20px;
   display: block;
 }
@@ -69,6 +69,19 @@ p {
   color: var(--color-blanco);
   transform: translateY(-3px);
   box-shadow: 0 6px 20px rgba(0,0,0,0.7);
+}
+
+.map-container {
+  margin-top: 20px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
 }
 
 .footer {
@@ -139,6 +152,10 @@ p {
   .logo {
     max-width: 70%;
     margin-bottom: 15px;
+  }
+
+  .map-container iframe {
+    height: 200px;
   }
 }
 
